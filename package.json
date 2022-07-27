@@ -1,0 +1,27 @@
+{
+  "name": "node-docker-env",
+  "version": "1.0.0",
+  "description": "test docker env to node",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErwinFloresMarca/node-docker-env.git"
+  },
+  "keywords": [
+    "testdocker-compose",
+    "env",
+    "node"
+  ],
+  "author": "Erwin Flores",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ErwinFloresMarca/node-docker-env/issues"
+  },
+  "homepage": "https://github.com/ErwinFloresMarca/node-docker-env#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
+}

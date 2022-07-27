@@ -1,0 +1,31 @@
+# Check out https://hub.docker.com/_/node to select a new base image
+FROM node:16-alpine
+# LABEL maintainer "Erwin Flores <ramiromarca6@gmail.com>"
+
+USER root
+
+RUN apk -U upgrade && apk add --no-cache git
+
+# Create app directory (with user `node`)
+ADD . .
+# Set to a non-root built-in user `node`
+USER node
+
+WORKDIR /home/node/
+RUN pwd
+RUN if ! [ -d "./node-docker-env" ]; then git clone https://ErwinFloresMarca:Erwin.10529939@github.com/ErwinFloresMarca/node-docker-env.git ; fi
+
+# Install app dependencies
+# A wildcard is used to ensure both package.json AND package-lock.json are copied
+# where available (npm@5+)
+
+WORKDIR /home/node/node-docker-env/
+RUN git pull origin main
+RUN npm install
+
+# Bundle app source code
+ENV HOST=0.0.0.0 PORT=3000 V_ENV_3="variable 3 from dockerfile"
+
+RUN node .
+
+# Bind to all network interfaces so that it can be mapped to the host OS
