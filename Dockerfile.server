@@ -25,7 +25,7 @@ RUN npm install
 
 # Bundle app source code
 ENV HOST=0.0.0.0 PORT=3000 V_ENV_3="variable 3 from dockerfile"
-
-RUN node .
+EXPOSE 3000
+RUN npm run start:prod
 
 # Bind to all network interfaces so that it can be mapped to the host OS
