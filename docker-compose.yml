@@ -1,7 +1,7 @@
 version: '3'
 services:
   cartas-server:
-    container_name: cartas-server
+    container_name: test-server
     restart: always
     environment:
       - V_ENV_1=valuen 1 test compose
@@ -10,4 +10,3 @@ services:
       dockerfile: Dockerfile.server
     env_file:
       - ./.env
-volumes:
