@@ -1,6 +1,6 @@
 version: '3'
 services:
-  cartas-server:
+  test-server:
     container_name: test-server
     restart: always
     environment:
@@ -10,3 +10,5 @@ services:
       dockerfile: Dockerfile.server
     env_file:
       - ./.env
+    expose:
+      - 3000
